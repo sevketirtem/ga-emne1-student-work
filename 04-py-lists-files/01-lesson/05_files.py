@@ -4,7 +4,7 @@ print(f"Current directory is: {Path.cwd()}")
 data_directory = Path("..") / "data"
 #print(data_directory)
 
-prices_path = data_directory / "price.txt"
+prices_path = data_directory / "prices.txt"
 
 print(data_directory)
 print(data_directory.exists())

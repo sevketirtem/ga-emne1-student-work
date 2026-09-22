@@ -3,12 +3,20 @@ print(f"Current directory is: {Path.cwd()}")
 data_directory = Path("..") / "data"
 #print(data_directory)
 
-prices_path = data_directory / "price.txt"
+prices_path = data_directory / "prices.txt"
 report_path = data_directory / "price_report.txt"
-prices = []
 
+prices = []
 with open(prices_path,"r", encoding="utf-8") as file:
     for line in file:
         prices.append(float(line.strip()))
 print(prices)
 
+
+with open(prices_path,"r", encoding="utf-8") as file:
+        len(prices)
+print(prices)
+
+
+print(sum(prices))
+print(len(prices))
