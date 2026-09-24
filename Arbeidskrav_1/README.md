@@ -7,131 +7,92 @@
 
 ## Om innleveringen
 
-Denne innleveringen inneholder løsninger på oppgave 1–5 i arbeidskrav 1, samt en video hvor jeg forklarer og demonstrerer koden.YZ'yi translation ve README.md dosyasini yapmak icin kullandim. Kod kopyala-yapistir hic yapmadim. Bu nedenle de odevleri tamamlayamadim. Ornegin "try/except" ve "Class" ozellikleri 39. haftada anlatildi. Benim norveccem yeterli olmadigi icin dersleri pazartesi gunleri sadece dinliyorum. Sali ve carsamba gunleri transkript ile birlikte derslere herbir derse calisiyorum. Haftanin geri kalaninda da oppgaveleri yapiyorum. Bu nedenle bu arbeidskravi henuz tamamlayamadim. Githup gecmisimde her haftanin uygulamalari mevcuttur. Tomas'in anlattiklarini kendim uyguluyorum ve herseyi ogreniyorum. Ama bu biraz zaman aliyor. 
+This submission currently contains a solution to **Oppgave 1.1** only
+(inside `oppgave-1.py`), submitted early with the school's permission due to
+time constraints this week. I used AI to help with translation (the
+assignment text is in Norwegian, and my Norwegian is not yet strong enough
+to read it quickly and precisely) and to help structure this README.md. I
+did not copy-paste any code from AI. Because of this, I was not able to
+complete all subtasks in time.
 
+Features like `try/except` and classes are taught in Week 39, which I have
+not reached yet. My Norwegian is not strong enough to follow Monday's live
+lectures directly, so I only listen on Mondays, then work through each
+lecture with the transcript on Tuesdays and Wednesdays, and do the exercises
+for the rest of the week. This works, but takes time — my GitHub history
+shows each week's exercises. I am learning and applying everything Thomas
+teaches myself; I will complete and add the remaining subtasks after this
+deadline.
 ## Filstruktur
 
-| Fil | Innhold |
-|---|---|
-| `oppgave-1.py` | Løsning på oppgave 1 (alle deloppgaver) |
-| `oppgave-2.py` | Løsning på oppgave 2 (alle deloppgaver) |
-| `oppgave-3.py` | Løsning på oppgave 3 (alle deloppgaver) |
-| `oppgave-4.py` | Løsning på oppgave 4 (alle deloppgaver) |
-| `oppgave-5.py` | Løsning på oppgave 5 (startfil — se evt. støttefiler nevnt under) |
-| `README.md` | Denne filen |
+| Fil                   | Innhold                                             |
+|-----------------------|-----------------------------------------------------|
+| `oppgave-1.py`        | Solution to Oppgave 1.1 only (1.2-1.4 not yet done) |
+| `oppgave-1-notes.py` | Earlier, commented version of oppgave-1.py, kept to show my learning process (not the final submission — see `oppgave-1.py`) |
+| `KI-dokumentasjon.md` | AI usage documentation                              |
+| `README.md`           | Denne filen                                         |
+
 
 
 ## Oppgave 1 (`oppgave-1.py`)
 
 **Hva oppgaven går ut på:**
+This assignment asks for a single Python program (`oppgave-1.py`) combining
+four subtasks using the fundamental building blocks of Python (variables,
+data types, operators, `input()`, conditions, and loops):
 
+- 1.1 — Ask the user for the number of study sessions and minutes per
+  session, then calculate total study time in hours and minutes.
+- 1.2 — Ask for a text and display character count, lowercase version,
+  reversed text, and whether it contains "python".
+- 1.3 — Ask for a number range and find all even numbers, all numbers
+  divisible by 3, and the sum of the range.
+- 1.4 — Combine these into a menu (options 1–4), redisplay the menu after
+  each action, and only exit on option 4.
+
+At every step, the program must validate input. Invalid input — empty,
+text instead of a number, negative or zero where not allowed, or an
+invalid range (`start > end`) — must not crash the program; it should show
+a clear error message and ask again.
 
 **Hvordan jeg løste det:**
-
+- I wrote separate functions (`print_error`, `is_valid_integer`,
+  `get_positive_integer`, `calculate_used_time`) to keep the code organized
+  and reusable. So far I have only completed Task 1.1 fully and correctly.
+  I did not have time to study Week 39's material, so I deliberately limited
+  myself to concepts from Weeks 35–38 and avoided `try/except`, classes,
+  `.isdigit()`, `continue`, and `break`.
+- Input validation uses my own `is_valid_integer()` function instead of
+  `try/except` or `.isdigit()`: I check each character is between `"0"` and
+  `"9"`, handling a leading `-` separately so negative numbers are still
+  recognized as valid integers (just not positive ones). Only after
+  validation do I convert with `int()`.
+- For the validation loop, I used the flag pattern from class (similar to
+  `guessed_correctly` in the guessing game): `valid = False` with
+  `while not valid:`, so the program keeps asking until a valid value is
+  entered. No `continue` or `break`.
+- I plan to use the same flag pattern for the main menu loop in 1.4
+  (`program_running = True/False`).
 
 **Testet med:**
 
+- Empty input
+- 3.5
+- Letters (`abc`)
+- Negative numbers (`-3`)
+- Zero (`0`)
+- Valid input (`5` sessions × `45` minutes → "3 hours and 45 minutes")
 
----
+In all cases, the program behaved as expected: invalid input showed a clear
+error message and asked again; valid input produced the correct result.
 
-## Oppgave 2 (`oppgave-2.py`)
-
-**Hva oppgaven går ut på:**
-
-
-**Hvordan jeg løste det:**
-
-
-**Testet med:**
-
-
----
-
-## Oppgave 3 (`oppgave-3.py`)
-
-**Hva oppgaven går ut på:**
-
-
-**Hvordan jeg løste det:**
-
-
-**Testet med (minst 6 gyldige og 6 ugyldige tilfeller):**
-
-| # | Input | Forventet resultat | Gyldig/Ugyldig |
-|---|-------|---------------------|------------------|
-| 1 |       |                     |                  |
-| 2 |       |                     |                  |
-| 3 |       |                     |                  |
-| 4 |       |                     |                  |
-| 5 |       |                     |                  |
-| 6 |       |                     |                  |
-| 7 |       |                     |                  |
-| 8 |       |                     |                  |
-| 9 |       |                     |                  |
-| 10|       |                     |                  |
-| 11|       |                     |                  |
-| 12|       |                     |                  |
-
----
-
-## Oppgave 4 (`oppgave-4.py`)
-
-**Hva oppgaven går ut på:**
-
-
-**Hvordan jeg løste det:**
-
-
-**Testet med:**
-
-
----
-
-## Oppgave 5 (`oppgave-5.py`)
-
-**Hva oppgaven går ut på:**
-
-
-**Hvordan jeg løste det:**
-
-
-**Testet med:**
-
-
----
-
-## KI-dokumentasjon (bruk av kunstig intelligens)
-
-<!-- Hvis du IKKE har brukt KI: skriv bare setningen under og slett resten av denne seksjonen.
-"Jeg har ikke brukt kunstig intelligens i denne innleveringen." -->
-
-Jeg har brukt kunstig intelligens (Claude) som en del av arbeidet med denne innleveringen. Under følger alle forespørsler (prompter) og svar som helt eller delvis er kopiert inn i, eller som direkte har påvirket, løsningen min.
-
-### Forespørsel 1
-**Prompt:**
-```
-[Lim inn spørsmålet/forespørselen din her]
-```
-**Svar (sammendrag eller fullstendig):**
-```
-[Lim inn svaret her]
-```
-**Hvordan dette påvirket løsningen min:**
-
-
-### Forespørsel 2
-**Prompt:**
-```
-
-```
-**Svar:**
-```
-
-```
-**Hvordan dette påvirket løsningen min:**
-
-
-<!-- Legg til flere forespørsler etter samme mal ved behov -->
+## Known issues / limitations
+- Only Oppgave 1.1 is implemented; the rest of Arbeidskrav 1 will be
+  completed and added after this initial deadline, with the school's
+  agreement.
+- User-facing text is in English; the assignment text allows this
+  ("Tekst som vises til brukeren ... kan være på norsk" — Norwegian was
+  optional, not required).
 
 ---
 
@@ -141,14 +102,7 @@ Video eller videolenke: [lim inn lenke her, f.eks. til OneDrive/Google Drive/Tea
 
 ---
 
-## Navnekonvensjoner i koden
-
-- Klassenavn: `PascalCase`
-- Funksjons- og variabelnavn: `snake_case`
-- Konstanter: `UPPER_SNAKE_CASE`
-- Alle identifikatorer (klasser, funksjoner, variabler, parametere, attributter) på engelsk.
-- Tekst til bruker, kommentarer og forklaringer kan være på norsk.
-
-## Git
-
+## Git repository
+GitHub: https://github.com/sevketirtem/ga-emne1-student-work.git
 Alt arbeid er committet og pushet til `ga-emne1-student-work` på GitHub (bruker: sevketirtem).
+Git history is also included as `git-history.txt` in this submission.
