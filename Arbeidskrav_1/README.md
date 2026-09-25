@@ -98,8 +98,8 @@ error message and asked again; valid input produced the correct result.
 
 ## Video
 
-Video eller videolenke: [lim inn lenke her, f.eks. til OneDrive/Google Drive/Teams]
-
+Video eller videolenke:
+https://gokstadakademietas-my.sharepoint.com/:v:/g/personal/sev_irt015_gokstadakademiet_no/IQBe-VYXf1RXRJ1iKc7MTfdIAYJ03HaITtWapIBhl-99Yio?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=YrtxAa 
 ---
 
 ## Git repository

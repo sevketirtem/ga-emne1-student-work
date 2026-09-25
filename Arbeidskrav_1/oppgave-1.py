@@ -19,7 +19,6 @@ def is_valid_integer(text):
 
 def get_positive_integer(prompt):
     valid = False
-    value = 0
 
     while not valid:
         text = input(prompt)
